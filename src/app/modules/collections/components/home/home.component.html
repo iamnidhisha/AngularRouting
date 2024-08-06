@@ -1,0 +1,53 @@
+<div class="slider-container">
+  <div
+    class="slider"
+    [style.transform]="'translateX(' + -currentIndex * 100 + '%)'"
+  >
+    <div class="slider-item" *ngFor="let slide of slides">
+      <img [src]="slide.image" alt="Slider Image" class="slider-image" />
+      <div class="text-overlay">
+        <h2>{{ slide.title }}</h2>
+        <p>{{ slide.description }}</p>
+        <a [href]="slide.buttonLink" class="btn">{{ slide.buttonText }}</a>
+      </div>
+    </div>
+  </div>
+  <div class="navigation">
+    <button (click)="prevImage()">&#10094;</button>
+    <button (click)="nextImage()">&#10095;</button>
+  </div>
+</div>
+
+<!-- <div class="card" *ngFor="let item of items">
+  <div class="image-container">
+    <img [src]="item.image" alt="Product Image" class="primary-image" />
+    <img [src]="item.hoverImage" alt="Hover Image" class="hover-image" />
+  </div>
+  <div class="card-content">
+    <h3>{{ item.title }}</h3>
+    <div class="rating">★★★★★</div>
+    <div class="price">
+      <span class="original-price">Rs. {{ item.originalPrice }}</span>
+      <span class="sale-price">Rs. {{ item.salePrice }}</span>
+    </div>
+    <button class="choose-options">Choose options</button>
+  </div>
+</div> -->
+
+<div class="card-container">
+  <div class="card" *ngFor="let item of items">
+    <div class="image-container">
+      <img [src]="item.image" alt="Product Image" class="primary-image" />
+      <img [src]="item.hoverImage" alt="Hover Image" class="hover-image" />
+    </div>
+    <div class="card-content">
+      <h3>{{ item.title }}</h3>
+      <div class="rating">★★★★★</div>
+      <div class="price">
+        <span class="original-price">Rs. {{ item.originalPrice }}</span>
+        <span class="sale-price">Rs. {{ item.salePrice }}</span>
+      </div>
+      <button class="choose-options">Choose options</button>
+    </div>
+  </div>
+</div>

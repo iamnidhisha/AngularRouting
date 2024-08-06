@@ -13,6 +13,13 @@ const routes: Routes = [
     loadChildren: () =>
       import('./modules/admin/admin.module').then((m) => m.AdminModule),
   },
+  {
+    path: 'collections',
+    loadChildren: () =>
+      import('./modules/collections/collections.module').then(
+        (m) => m.CollectionsModule
+      ),
+  },
   { path: '**', component: NotFoundComponent },
 ];
 

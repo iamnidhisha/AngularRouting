@@ -10,6 +10,10 @@ import { AboutComponent } from './components/about/about.component';
 import { ServicesComponent } from './components/services/services.component';
 import { ContactComponent } from './components/contact/contact.component';
 
+import { CategoryMasterComponent } from './components/category-master/category-master.component';
+import { ProductMasterComponent } from './components/product-master/product-master.component';
+import { PriceMasterComponent } from './components/price-master/price-master.component';
+
 @NgModule({
   declarations: [
     AdminDashboardComponent,
@@ -19,6 +23,9 @@ import { ContactComponent } from './components/contact/contact.component';
     AboutComponent,
     ServicesComponent,
     ContactComponent,
+    CategoryMasterComponent,
+    ProductMasterComponent,
+    PriceMasterComponent,
   ],
   imports: [CommonModule, AdminRoutingModule],
 })
