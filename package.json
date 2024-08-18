@@ -23,6 +23,8 @@
     "@fortawesome/free-solid-svg-icons": "^6.2.1",
     "@ng-bootstrap/ng-bootstrap": "^14.2.0",
     "bootstrap": "^5.3.3",
+    "primeicons": "^7.0.0",
+    "primeng": "^15.2.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0"

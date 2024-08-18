@@ -196,7 +196,9 @@
   ); /* Adjust the width and margins for 4 cards per row */
   margin: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s;
+  /* transition: transform 0.2s; */
+  /* transition: transform 0.2s; */
+  transition: transform 10s ease-out;
 }
 
 .image-container {
@@ -230,6 +232,7 @@
 
 .card:hover {
   transform: scale(1.05);
+  transition-duration: 5s;
 }
 
 .card:hover .primary-image {

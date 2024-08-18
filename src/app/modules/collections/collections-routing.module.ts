@@ -4,6 +4,7 @@ import { CollectionDashboardComponent } from './components/collection-dashboard/
 import { AboutComponent } from './components/about/about.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { HomeComponent } from './components/home/home.component';
+import { CartComponent } from './components/cart/cart.component';
 
 const routes: Routes = [
   {
@@ -13,6 +14,7 @@ const routes: Routes = [
       { path: 'home', component: HomeComponent },
       { path: 'about', component: AboutComponent },
       { path: 'contact', component: ContactComponent },
+      { path: 'cart', component: CartComponent },
       { path: '', redirectTo: '/collections/home', pathMatch: 'full' },
     ],
   },

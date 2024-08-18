@@ -14,6 +14,8 @@ import { CategoryMasterComponent } from './components/category-master/category-m
 import { ProductMasterComponent } from './components/product-master/product-master.component';
 import { PriceMasterComponent } from './components/price-master/price-master.component';
 
+import { TableModule } from 'primeng/table';
+
 @NgModule({
   declarations: [
     AdminDashboardComponent,
@@ -27,6 +29,6 @@ import { PriceMasterComponent } from './components/price-master/price-master.com
     ProductMasterComponent,
     PriceMasterComponent,
   ],
-  imports: [CommonModule, AdminRoutingModule],
+  imports: [CommonModule, AdminRoutingModule, TableModule],
 })
 export class AdminModule {}

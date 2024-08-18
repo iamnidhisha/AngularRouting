@@ -23,7 +23,7 @@
         width="100%"
         height="50px"
     /></a>
-    <a href="#"
+    <a href="http://localhost:4200/collections/cart"
       ><img
         src="../../../../../assets/images/shoppingcart_ic.gif"
         alt="Cart"
@@ -33,14 +33,10 @@
   </div>
 
   <nav class="nav">
-    <a href="http://localhost:4200/collections/home">Car Dashboard Idols</a>
-    <a href="http://localhost:4200/collections/home">Ram Darbar</a>
-    <a href="http://localhost:4200/collections/home">Small Temples</a>
-    <a href="http://localhost:4200/collections/home">Table top decor</a>
-    <a href="http://localhost:4200/collections/home">Sanatan Collectibles</a>
-    <a href="http://localhost:4200/collections/home">Catalog</a>
-    <a href="http://localhost:4200/collections/home">Customer Review</a>
-    <a href="http://localhost:4200/collections/about">About Us</a>
-    <a href="http://localhost:4200/collections/contact">Contact</a>
+    <ng-container *ngFor="let list of categoryList">
+      <a [href]="'http://localhost:4200/collections/' + list.navigationName">
+        {{ list.categoryName }}
+      </a>
+    </ng-container>
   </nav>
 </header>

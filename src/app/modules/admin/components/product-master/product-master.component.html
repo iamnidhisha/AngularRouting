@@ -1,3 +1,102 @@
-<p>
-  product-master works!
-</p>
+<div class="card">
+  <div class="card-header card-header-rose card-header-icon">
+    <div class="card-icon"><i class="material-icons">assignment</i></div>
+    <div class="row">
+      <div class="col-md-6 card-title">
+        <h4><b>Product Master</b></h4>
+      </div>
+      <div class="col-md-4 card-title text-right">
+        <input
+          type="text"
+          class="form-control"
+          pInputText
+          size="50"
+          placeholder="Search"
+          (input)="dt.filterGlobal(getEventValue($event), 'contains')"
+        />
+      </div>
+      <div class="col-md-2 card-title text-left">
+        <button type="submit" (click)="showAddDialog()">
+          <span class="material-symbols-outlined"> add_circle </span>
+          &nbsp;Product&nbsp;
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="card-body">
+    <div class="table-responsive" style="display: contents !important">
+      <p-table
+        #dt
+        [value]="products"
+        [columns]="columns"
+        [styleClass]="myclass"
+        [rowHover]="true"
+        [rows]="5"
+        (onLazyLoad)="loadLazy($event)"
+        [lazy]="true"
+        [showCurrentPageReport]="true"
+        [rowsPerPageOptions]="[5, 10, 15, 25, 30]"
+        [paginator]="true"
+        [totalRecords]="totalRecords"
+        currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+        sortMode="single"
+        sortField="id"
+        [sortOrder]="-1"
+      >
+        <ng-template pTemplate="header">
+          <tr>
+            <th
+              *ngIf="this.userId === 1"
+              width="150px"
+              pSortableColumn="customerName"
+              pResizableColumn
+            >
+              Customer
+              <p-sortIcon
+                field="customerName"
+                ariaLabel="Activate to sort"
+                ariaLabelDesc="Activate to sort in descending order"
+                ariaLabelAsc="Activate to sort in ascending order"
+              ></p-sortIcon>
+            </th>
+            <th
+              *ngFor="let col of columns"
+              [pSortableColumn]="col.field"
+              pResizableColumn
+            >
+              {{ col.header }}
+              <p-sortIcon
+                [field]="col.field"
+                ariaLabel="Activate to sort"
+                ariaLabelDesc="Activate to sort in descending order"
+                ariaLabelAsc="Activate to sort in ascending order"
+              >
+              </p-sortIcon>
+            </th>
+            <th>Action</th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-data let-columns="columns">
+          <tr>
+            <td *ngIf="this.userId === 1" width="120px">
+              {{ data.customerName }}
+            </td>
+            <td *ngFor="let col of columns">
+              {{ data[col.field] }}
+            </td>
+            <td class="td-actions text-center">
+              <span
+                (click)="editDialog(data)"
+                style="cursor: pointer"
+                matTooltip="Edit Batch"
+                ><i style="color: green" class="material-icons"
+                  >edit_note</i
+                ></span
+              >
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </div>
+  </div>
+</div>

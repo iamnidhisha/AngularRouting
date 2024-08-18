@@ -35,17 +35,17 @@
 </div> -->
 
 <div class="card-container">
-  <div class="card" *ngFor="let item of items">
+  <div class="card" *ngFor="let item of productList">
     <div class="image-container">
       <img [src]="item.image" alt="Product Image" class="primary-image" />
       <img [src]="item.hoverImage" alt="Hover Image" class="hover-image" />
     </div>
     <div class="card-content">
-      <h3>{{ item.title }}</h3>
+      <h5>{{ item.title }}</h5>
       <div class="rating">★★★★★</div>
       <div class="price">
         <span class="original-price">Rs. {{ item.originalPrice }}</span>
-        <span class="sale-price">Rs. {{ item.salePrice }}</span>
+        <span class="sale-price">Rs. {{ item.sellingPrice }}</span>
       </div>
       <button class="choose-options">Choose options</button>
     </div>
